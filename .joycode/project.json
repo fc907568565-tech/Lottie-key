@@ -1,0 +1,27 @@
+{
+  "id": 59360,
+  "name": "Lottiekey",
+  "abbrName": "LO",
+  "description": "",
+  "devMode": 2,
+  "status": null,
+  "url": null,
+  "databaseHost": null,
+  "databasePort": null,
+  "databaseName": null,
+  "databaseUsername": null,
+  "databasePassword": null,
+  "projectInfo": {
+    "JD": {
+      "wuqiumin1001": [
+        {
+          "wuqiumin1001": {
+            "projectId": 59360,
+            "appId": "25792",
+            "billSource": "2"
+          }
+        }
+      ]
+    }
+  }
+}

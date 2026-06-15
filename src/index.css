@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --bg-base: #0b0d12;
+  --bg-elev: #11141b;
+  --bg-elev-2: #161a23;
+  --border-soft: #1f2430;
+  --border-strong: #2a3040;
+  --fg: #e6e8ee;
+  --fg-muted: #8a92a6;
+  --primary: #4f7cff;
+  --primary-hover: #3d6bf0;
+  --accent: #7c5cff;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(1200px 600px at 80% -10%, rgba(79, 124, 255, 0.10), transparent 60%),
+              radial-gradient(900px 500px at -10% 110%, rgba(124, 92, 255, 0.08), transparent 60%),
+              var(--bg-base);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Panels ===== */
+.panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)) , var(--bg-elev);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px -12px rgba(0,0,0,0.5);
+}
+
+.panel-sub {
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border-soft);
+  border-radius: 10px;
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  @apply text-white px-4 py-2.5 rounded-lg font-semibold transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2;
+  background: linear-gradient(180deg, #5b87ff, #3d6bf0);
+  box-shadow: 0 8px 24px -10px rgba(79,124,255,0.7), inset 0 1px 0 rgba(255,255,255,0.15);
+}
+.btn-primary:hover:not(:disabled) { filter: brightness(1.05); }
+
+.btn-ghost {
+  @apply px-3 py-2 rounded-lg text-neutral-300 transition-all flex items-center justify-center gap-2 text-sm;
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border-soft);
+}
+.btn-ghost:hover { border-color: var(--border-strong); color: #fff; }
+
+/* ===== Slider ===== */
+.slider {
+  @apply w-full h-1.5 rounded-full appearance-none cursor-pointer;
+  background: #1c2130;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--primary);
+  box-shadow: 0 2px 8px rgba(79,124,255,0.5);
+  cursor: pointer;
+}
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--primary);
+  cursor: pointer;
+}
+
+/* ===== Section header ===== */
+.section-title {
+  @apply text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-400 flex items-center gap-2;
+}
+
+/* ===== Scrollbar ===== */
+.scroll-area::-webkit-scrollbar { width: 8px; }
+.scroll-area::-webkit-scrollbar-track { background: transparent; }
+.scroll-area::-webkit-scrollbar-thumb { background: #232838; border-radius: 4px; }
+.scroll-area::-webkit-scrollbar-thumb:hover { background: #2f3548; }
+
+/* ===== Checker pattern ===== */
+.checker-bg {
+  background-image:
+    linear-gradient(45deg, #1a1d27 25%, transparent 25%),
+    linear-gradient(-45deg, #1a1d27 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #1a1d27 75%),
+    linear-gradient(-45deg, transparent 75%, #1a1d27 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+  background-color: #0d1018;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeIn 0.3s ease-out; }
+
+/* number input cleanup */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }

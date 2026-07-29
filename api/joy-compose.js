@@ -1,9 +1,10 @@
 // Vercel Serverless Function: /joy-compose
 // 获取 JOY 官方 compose.html 并注入完整 patch（与 vite dev 共享同一份 patch 逻辑）。
 import https from 'https';
-import patchModule from './_patchJoyCompose.cjs';
+import { createRequire } from 'module';
 
-const { patchJoyComposeHtml } = patchModule;
+const require = createRequire(import.meta.url);
+const { patchJoyComposeHtml } = require('./_patchJoyCompose.cjs');
 
 const JOY_COMPOSE_URL = 'https://5r0lrpa77tvw.joyapp.jd.com/compose.html';
 

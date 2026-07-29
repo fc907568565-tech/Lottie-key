@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/joy-compose", "destination": "/api/joy-compose" },
+    { "source": "/joy-proxy/:path*", "destination": "/api/joy-proxy/:path*" },
+    { "source": "/remote-asset", "destination": "/api/remote-asset" }
+  ]
+}

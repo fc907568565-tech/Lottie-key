@@ -1,7 +1,7 @@
 {
   "functions": {
     "api/joy-compose.js": {
-      "includeFiles": "api/_patchJoyCompose.cjs"
+      "includeFiles": "lib/patchJoyCompose.cjs"
     }
   },
   "rewrites": [

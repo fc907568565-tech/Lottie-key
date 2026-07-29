@@ -4,7 +4,7 @@ import https from 'https';
 import { createRequire } from 'module';
 
 const require = createRequire(import.meta.url);
-const { patchJoyComposeHtml } = require('./_patchJoyCompose.cjs');
+const { patchJoyComposeHtml } = require('../lib/patchJoyCompose.cjs');
 
 const JOY_COMPOSE_URL = 'https://5r0lrpa77tvw.joyapp.jd.com/compose.html';
 
